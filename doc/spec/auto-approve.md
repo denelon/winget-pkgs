@@ -12,12 +12,16 @@ issue id: <github issue id>
 ## Abstract
 
 [comment]: # Outline what this spec describes
-This specification defines criteria for auto-approval of PRs for a subset of packages in an allow list. These auto-approvals will be limited to packages in the allow list only when a limited set of properties have been modified. These would include package version, package URL (filtered by logic for installer URLs on the same domain and path), and the Installer SHA256.
+This specification defines criteria for auto-approval of PRs for a subset of packages in an allow list. These auto-approvals will be limited to packages in the allow list only when a limited set of properties have been modified. These would include:
+*  Package version
+*  Package URL (filtered by logic for installer URLs on the same domain and path)
+*  Installer SHA256
+*  Product Code
 
 ## Inspiration
 
 [comment]: # What were the drivers/inspiration behind the creation of this spec.
-Several packages have rich metadata and when new versions are added, the only changes are the installer portion of the URL, the Installer SHA256 the package version.
+Several packages have rich metadata and when new versions are added, the only changes are the installer metadata and other fields necessary to support the new version. Descriptive fields and other optional values require manual review.
 
 ## Solution Design
 
