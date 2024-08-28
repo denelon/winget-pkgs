@@ -29,7 +29,9 @@ Manual review takes time, and for a subset of packages with rich metadata and on
 This would be implemented in the Validation pipelines.
 
 Good example PRs:
+TODO: explain what's going to work or not for each...
 * https://github.com/microsoft/winget-pkgs/pull/170290/files
+* https://github.com/microsoft/winget-pkgs/pull/170388/files
 
 ### Automated Identification
 Evaluate the version for a package to be added. If the version is newer than the latest version of a package in the repository identify which fields have been changed, added, or removed from the previous version.
