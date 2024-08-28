@@ -26,7 +26,7 @@ Manual review takes time, and for a subset of packages with rich metadata and on
 
 ## Solution Design
 
-This would be implemented in the Vaidation pipelines.
+This would be implemented in the Validation pipelines.
 
 Good example PRs:
 * https://github.com/microsoft/winget-pkgs/pull/170290/files
