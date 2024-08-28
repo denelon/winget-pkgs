@@ -5,7 +5,7 @@ last updated: <yyyy-mm-dd>
 issue id: <github issue id>
 ---
 
-# Spec Title
+# Auto approve new package versions in an allow list
 
 [comment]: # Link to issue: "For [#1](https://github.com/microsoft/winget-pkgs/issues/1)"
 
@@ -37,7 +37,8 @@ One moderator can remove a package from the allow list.
 
 ## UI/UX Design
 
-[comment]: # What will this fix/feature look like? How will it affect the end user?
+PRs for new package versions of packages in the allow list will not require manual review if specific criteria are met.
+One of the bots will comment on PRs for these packages if criteria are met for auto-approval. If criteria are not met for auto-approval, the bot will comment with the fields that prevent auto-approval for PRs against packages in the allow list.
 
 ## Capabilities
 
@@ -45,7 +46,7 @@ One moderator can remove a package from the allow list.
 
 ### Accessibility
 
-[comment]: # How will the proposed change impact accessibility for users of screen readers, assistive input devices, etc.
+No impact expected
 
 ### Security
 
@@ -57,9 +58,11 @@ One moderator can remove a package from the allow list.
 
 ### Compatibility
 
-[comment]: # Will the proposed change break existing code/behaviors? If so, how, and is the breaking change "worth it"?
+No breaking changes are anticipated.
 
 ### Performance, Power, and Efficiency
+
+The average time between PR submission and subsequent approval will be reduced on average.
 
 ## Potential Issues
 
