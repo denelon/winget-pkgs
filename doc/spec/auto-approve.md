@@ -18,6 +18,9 @@ This specification defines criteria for auto-approval of PRs for a subset of pac
 *  Installer SHA256
 *  Product Code
 
+Package Version should be an exact match to the values written in the registry for Apps & Features data.
+Other Apps And Features entries should also be an exact match.
+
 ## Inspiration
 
 [comment]: # What were the drivers/inspiration behind the creation of this spec.
