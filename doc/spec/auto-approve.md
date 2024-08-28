@@ -11,7 +11,6 @@ issue id: <github issue id>
 
 ## Abstract
 
-[comment]: # Outline what this spec describes
 This specification defines criteria for auto-approval of PRs for a subset of packages in an allow list. These auto-approvals will be limited to packages in the allow list only when a limited set of properties have been modified. These would include:
 *  Package version
 *  Package URL (filtered by logic for installer URLs on the same domain and path)
@@ -23,12 +22,18 @@ Other Apps And Features entries should also be an exact match.
 
 ## Inspiration
 
-[comment]: # What were the drivers/inspiration behind the creation of this spec.
-Several packages have rich metadata and when new versions are added, the only changes are the installer metadata and other fields necessary to support the new version. Descriptive fields and other optional values require manual review.
+Manual review takes time, and for a subset of packages with rich metadata and only installer/version level metadata is changed. Automation can identify when specific criteria are met, and eliminate the toil of a manual review. This can also reduce the time from when a PR is submitted and it gets approved. This is especially helpful on weekends/holidays and when PRs would normally sit open until the next business day for review.
 
 ## Solution Design
 
-[comment]: # Outline the design of the solution. Feel free to include ASCII-art diagrams, etc.
+This would be implemented in the Vaidation pipelines.
+
+### Automated Identification
+Evaluate the version for a package to be added. If the version is newer than the latest version of a package in the repository identify which fields have been changed, added, or removed from the previous version.
+
+### Allow List Management
+Two moderators are required to add a package to the allow list.
+One moderator can remove a package from the allow list.
 
 ## UI/UX Design
 
@@ -62,7 +67,7 @@ Several packages have rich metadata and when new versions are added, the only ch
 
 ## Future considerations
 
-[comment]: # What are some of the things that the fixes/features might unlock in the future? Does the implementation of this spec enable scenarios?
+The verified publisher feature may require mutual exclusion or modification with this feature.
 
 ## Resources
 
