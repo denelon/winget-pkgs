@@ -47,7 +47,7 @@ One of the bots will comment on PRs for these packages if criteria are met for a
 
 ## Capabilities
 
-[comment]: # Discuss how the proposed fixes/features impact the following key considerations:
+This feature enables the validation pipelines to determine if a PR is suitable for merge without manual review.
 
 ### Accessibility
 
@@ -55,11 +55,11 @@ No impact expected
 
 ### Security
 
-[comment]: # How will the proposed change impact security?
+None of the current security controls are expected to be impacted. All security checks associated with the manifest and the package installer will still be in place.
 
 ### Reliability
 
-[comment]: # Will the proposed change improve reliability? If not, why make the change?
+Reliability is not expected to be impacted in a negative way. By decreasing the average time between a valid PR submission and subsequent approval for merge should decrease. This should increase the reliability of the WinGet user experience by making the latest versions of packages submitted by PR available sooner for customers.
 
 ### Compatibility
 
@@ -71,7 +71,7 @@ The average time between PR submission and subsequent approval will be reduced o
 
 ## Potential Issues
 
-[comment]: # What are some of the things that might cause problems with the fixes/features proposed? Consider how the user might be negatively impacted.
+It's possible users may forgo updates to description, release notes, and other optional metadata in order to get a package merged in more quickly. This could lead to additional PRs to update the metadata after the fact which could get forgotten or delayed.
 
 ## Future considerations
 
