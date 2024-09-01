@@ -13,13 +13,12 @@ issue id: <github issue id>
 
 This specification defines criteria for auto-approval of PRs for a subset of packages in an allow list. These auto-approvals will be limited to packages in the allow list only when a limited set of properties have been modified. These would include:
 
-* Package version
-* Package URL (filtered by logic for installer URLs on the same domain and path)
-* Installer SHA256
-* Product Code
-
-Package Version should be an exact match to the values written in the registry for Apps & Features data.
-Other Apps And Features entries should also be an exact match.
+* PackageVersion
+* InstallerUrl (filtered by logic for installer URLs on the same domain and path)
+* InstallerSha256
+* ProductCode
+* ReleaseDate
+* ReleaseNotesUrl (filtered by logic for URLs on the same domain and path)
 
 ## Inspiration
 
@@ -27,13 +26,17 @@ Manual review takes time, and for a subset of packages with rich metadata and on
 
 ## Solution Design
 
-This would be implemented in the Validation pipelines.
+This would be implemented in the validation pipelines. If all existing manifest validation checks succeed, the pipeline would check if the package is in the allow list. If it is, the pipeline would check if the PR meets the criteria for auto-approval. PRs meeting the criteria would be automatically approved and merged.
 
-Good example PRs:
-TODO: explain what's going to work or not for each...
+Example PRs that would be auto-approved:
 
-* https://github.com/microsoft/winget-pkgs/pull/170290/files
-* https://github.com/microsoft/winget-pkgs/pull/170388/files
+1. [#170290](https://github.com/microsoft/winget-pkgs/pull/170290/files)
+    * Update to an existing version manifest ✅
+    * Updated fields are: PackageVersion, InstallerSha256, ProductCode ✅
+
+2. [#170388](https://github.com/microsoft/winget-pkgs/pull/170388/files)
+    * New version manifest of an existing PackageIdentifier ✅
+    * Updated fields from previous manifest are: PackageVersion, InstallerUrl, InstallerSha256, ReleaseDate, ReleaseNotesUrl ✅
 
 ### Automated Identification
 
@@ -79,7 +82,8 @@ It's possible users may forgo updates to description, release notes, and other o
 
 ## Future considerations
 
-The verified publisher feature may require mutual exclusion or modification with this feature.
+* The verified publisher feature may require mutual exclusion or modification with this feature.
+* For extending allow list to a larger set of packages, validation pipelines would require updates to match ARP manifest fields against their exact registry values.
 
 ## Resources
 
