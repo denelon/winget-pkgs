@@ -1,0 +1,13 @@
+PackageIdentifier: Microsoft.CascadiaCode
+PackageName: CascadiaCode
+PackageVersion: 2404.23
+Installers:
+- InstallerType: zip
+  InstallerUrl: https://github.com/microsoft/cascadia-code/releases/download/v2404.23/CascadiaCode-2404.23.zip
+  InstallerSha256: a911410626c0e09d03fa3fdda827188fda96607df50fecc3c5fee5906e33251b
+  NestedInstallerType: font
+  NestedInstallerFiles:
+  - RelativeFilePath: ttf/CascadiaCodeItalic.ttf
+  - RelativeFilePath: ttf/CascadiaMonoNFItalic.ttf
+ManifestType: installer
+ManifestVersion: 1.9.0

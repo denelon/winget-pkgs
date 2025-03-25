@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.9.0.schema.json
+
+PackageIdentifier: Microsoft.CascadiaCode
+PackageVersion: 2404.23
+PackageLocale: en-US
+Publisher: Microsoft Corporation
+PublisherUrl: https://microsoft.com
+PublisherSupportUrl: https://support.microsoft.com/en-us
+PrivacyUrl: https://go.microsoft.com/fwlink/?LinkID=824704
+Author: Microsoft Corporation
+PackageName: CascadiaCode
+PackageUrl: https://github.com/microsoft/cascadia-code
+License: SIL Open Font License
+LicenseUrl: https://github.com/microsoft/cascadia-code/blob/main/LICENSE
+Copyright: Copyright (c) 2019 - Present, Microsoft Corporation, with Reserved Font Name Cascadia Code.
+ShortDescription: NuGet is the package manager for .NET
+Description: |-
+  This is a fun, new monospaced font that includes programming ligatures and is designed to enhance the modern look and
+  feel of the Windows Terminal.
+Tags:
+- monospaced
+- programming-ligatures
+ManifestType: defaultLocale
+ManifestVersion: 1.9.0
